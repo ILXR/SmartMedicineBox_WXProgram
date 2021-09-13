@@ -1,0 +1,129 @@
+<!-- pages/remind/remind.wxml -->
+<!-- 提示框 -->
+<wxs module="util" src="./remind.wxs"></wxs>
+<view class="modelBack" hidden="{{!showModel}}"></view>
+<view class="myModel" hidden="{{!showModel}}" catchtouchmove='catchBackTouchMove' bind:tap="myModelTap">
+    <view class="latticeNumBox">
+        <view class="latticeNum" style="background-color:{{latticeStyle[curLattice-1].color}}">
+            <view class="latticeIndex">{{curLattice}}</view>
+            <view class="latticeText">号仓</view>
+        </view>
+    </view>
+    <view class="latticeContentBox">
+        <view class="latticeContent">
+            <view class="contentSpace"></view>
+            <view class="medicineName">{{latticeContent[curLattice-1].medicineName}}</view>
+            <view class="editContent" id="edit">修改服药设置</view>
+            <view class="clearLattice" id="cancle">不再服用该药</view>
+        </view>
+    </view>
+</view>
+<!-- 连接状态提示 -->
+<view class="tip">
+    <view class="tipBack">
+        <view class="tipText">{{TipText}}</view>
+    </view>
+</view>
+<!-- 主页面 -->
+<view class="content">
+    <!-- 上半部分绿色背景 -->
+    <view class="up">
+        <view class="upSpace"></view>
+        <!-- 用户头像栏 -->
+        <view class="user">
+            <view class="userLeft">
+                <view class="userImg">
+                    <open-data type="userAvatarUrl"></open-data>
+                </view>
+                <view class="boxText">我的药盒</view>
+            </view>
+            <view class="userRight">
+                <view class="config">
+                    <image class="configImg" src="/icons/config.png" mode="aspectFit" bind:tap="ConnectConfig" />
+                </view>
+            </view>
+        </view>
+        <!-- 空白部分背景 -->
+        <view class="space"></view>
+    </view>
+    <!-- 下半部分白色背景 -->
+    <view class="down">
+        <!-- 药盒 -->
+        <view class="box">
+            <!-- 药盒槽 -->
+            <block class="lattices" wx:for="{{latticeStyle}}" wx:key="{{index}}">
+                <view class="lattice" style="color:{{(loginSuccess&&BLEconnect)?item.color:'#999999'}}" data-lattice="{{latticeContent[index]}}" bind:tap="latticeTap">
+                    <!-- 第一行字 -->
+                    <view class="line1">
+                        <text class="lind1Index">{{item.index}}</text>
+                        <text class="lind1IndexAf">号仓</text>
+                    </view>
+                    <!-- 槽为空时 -->
+                    <view class="latticeEmpty" wx:if="{{!latticeContent[item.index-1].hasContent}}">
+                        <view class="line2">空</view>
+                        <view class="line3">
+                            <image class="addMedicine" mode="aspectFit" src="{{BLEconnect?item.addIcon:darkStyle.AddDark}}" />
+                        </view>
+                    </view>
+                    <!-- 槽不为空时 -->
+                    <view class="latticeNotEmpty" wx:else>
+                        <view class="line2">
+                            <image class="medicine" mode="aspectFit" src="{{BLEconnect?item.medicineIcon:darkStyle.MedicineDark}}" />
+                        </view>
+                        <view class="line3">
+                            <image class="editMedicine" mode="aspectFit" src="{{BLEconnect?item.editIcon:darkStyle.EditDark}}" />
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <!-- 服药提醒 -->
+        <view class="reminds">
+            <view class="emptyTip" wx:if="{{util(latticeContent)}}">
+                <text class="emptyTipText" decode="{{true}}">药盒空空如也\n快为它添加药品吧</text>
+            </view>
+            <view class="emptyTip" wx:elif="{{nowRemindList.length==0 && nextRemindList.length==0}}">
+                <text class="emptyTipText" decode="{{true}}">今日暂无其他服药计划</text>
+            </view>
+            <view class="remindList" wx:if="{{nowRemindList.length>0}}">
+                <view class="nowRemind">
+                    <view class="nowRemindLeft">现在</view>
+                    <view class="nowRemindRight">{{nowRemindTime}}</view>
+                </view>
+                <view class="remindListDetail" style="background-color:{{latticeStyle[item.latticeIndex-1].color}};color:white;" wx:for="{{nowRemindList}}" wx:key="{{index}}">
+                    <view class="detailLeft">
+                        <view class="remindListLattice" style="background-color:{{latticeStyle[item.latticeIndex-1].darkerColor}}">
+                            {{item.latticeIndex}}号仓
+                        </view>
+                        <view class="remindListMedicine">{{item.medicineName}}</view>
+                    </view>
+                    <view class="detailRight">
+                        <view class="remindListNumber">
+                            <text class="remindListNumber_number">{{item.takeNumber}}</text>
+                            <text class="remindListNumber_text">粒</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="remindSpace"></view>
+            </view>
+            <view class="remindList" wx:if="{{nextRemindList.length>0}}">
+                <view class="nextRemind">
+                    <view class="nextRemindLeft">今日即将</view>
+                    <view class="nextRemindRight">{{nextRemindTime}}</view>
+                </view>
+                <view class="remindListDetail" wx:for="{{nextRemindList}}" wx:key="{{index}}">
+                    <view class="detailLeft">
+                        <view class="remindListLattice" style="background-color:{{latticeStyle[item.latticeIndex-1].color}}">
+                            {{item.latticeIndex}}号仓
+                        </view>
+                        <view class="remindListMedicine">{{item.medicineName}}</view>
+                    </view>
+                    <view class="detailRight">
+                        <text class="remindListNumber_number">{{item.takeNumber}}</text>
+                        <text class="remindListNumber_text">粒</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

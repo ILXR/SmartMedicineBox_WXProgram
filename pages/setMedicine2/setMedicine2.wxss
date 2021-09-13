@@ -1,0 +1,240 @@
+/* pages/setMedicine2/setMedicine2.wxss */
+page {
+    background-color: #D3D3D3;
+}
+
+.up {
+    background-color: #00CC99;
+    padding: 60rpx 0 150rpx 0;
+}
+
+/* 进度条 */
+.process {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.processItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.processLeft,
+.processRight {
+    background-color: white;
+    height: 3rpx;
+    width: 120rpx;
+}
+
+.processImg {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    height: 80rpx;
+    width: 80rpx;
+}
+
+/* 操作说明 */
+.timeTip {
+    margin-top: 70rpx;
+    color: white;
+    text-align: center;
+}
+
+.time,
+.tip,
+.finish {
+    letter-spacing: 5rpx;
+}
+
+.time {
+    font-size: 55rpx;
+}
+
+.tip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35rpx;
+    margin-top: 16rpx;
+}
+
+.tip:first {
+    margin-right: 15rpx;
+}
+
+/* 选择周几 */
+.down {
+    padding: 0 0 20rpx 0;
+    position: relative;
+    top: -100rpx;
+    width: 94%;
+    margin: auto;
+}
+
+.week,
+.number {
+    background-color: white;
+    border-radius: 30rpx;
+    box-sizing: border-box;
+    padding: 40rpx 40rpx;
+    margin-bottom: 40rpx;
+}
+
+.weekLine,
+.numberLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70rpx;
+}
+
+.weekText,
+.numberText {
+    color: #666;
+}
+
+.weekTip,
+.numberTip {
+    color: #C0C0C0;
+    font-size: 60%;
+}
+
+.weekConfig {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkItem,
+.checkItemText {
+    margin: auto;
+    font-size: 30rpx;
+    color: #666;
+    margin-bottom: 10rpx;
+}
+
+/* 重写 checkbox 样式 */
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input {
+    border-radius: 50%;
+    /* 圆角 */
+    width: 55rpx;
+    /* 背景的宽 */
+    height: 55rpx;
+    /* 背景的高 */
+}
+
+/* 这里如果不能修改背景颜色，在选中后的样式中添加background-color */
+/* 选中后的 背景样式 */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    border: 4rpx solid #90EE90;
+    background: #00CC99;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    border-radius: 50%;
+    /* 圆角 */
+    width: 55rpx;
+    /* 选中后对勾大小，不要超过背景的尺寸 */
+    height: 55rpx;
+    line-height: 55rpx;
+    text-align: center;
+    font-size: 35rpx;
+    /* 对勾大小 30rpx */
+    color: #fff;
+    /* 对勾颜色 白色 */
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+/* 服药数量picker */
+.setNumber {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 40rpx;
+}
+
+.setTimes,
+.setNumpertime {
+    width: 200rpx;
+}
+
+.times,
+.numberpertime {
+    text-align: center;
+    margin: auto;
+    border-top: 2rpx solid #3CB371;
+    border-bottom: 2rpx solid #3CB371;
+    padding: 20rpx 0;
+    font-size: 60rpx;
+    color: #3CB371;
+}
+
+.timesText,
+.numberText {
+    text-align: center;
+    font-size: 30rpx;
+    padding: 20rpx 0;
+}
+
+/* 服药内容设置 */
+.contentDetail {
+    color: #666;
+    margin-bottom: 10rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contentTimePicker,
+.contentNumPicker {
+    border: 2rpx solid #AFEEEE;
+    box-sizing: border-box;
+    padding: 20rpx;
+    background-color: #E1FFFF;
+    border-radius: 20rpx;
+}
+
+.contentTimePicker {
+    width: 54%;
+}
+
+.contentNumPicker {
+    text-align: center;
+    font-size: 20rpx;
+    width: 44%;
+}
+
+.remindTime {
+    margin-left: 50rpx;
+}
+
+.takeNumber,
+.remindTime {
+    font-size: 50rpx;
+}
+
+.takeText {
+    font-size: 35rpx;
+}
+
+/* 底部跳转按钮 */
+.finish {
+    box-sizing: border-box;
+    position: fixed;
+    padding: 35rpx;
+    width: 100%;
+    bottom: 0;
+    font-size: 35rpx;
+    text-align: center;
+    color: white;
+    background-color: #00CC99;
+}

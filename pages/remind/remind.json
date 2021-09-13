@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor":"#00CC99",
+  "navigationBarTitleText":"智能药盒",
+  "enablePullDownRefresh":false,
+  "backgroundColor":"#00CC99"
+}

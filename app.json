@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/remind/remind",
+    "pages/record/record",
+    "pages/setMedicine2/setMedicine2",
+    "pages/setMedicine1/setMedicine1",
+    "pages/connect/connect"
+  ],
+  "tabBar":{
+    "list":[
+      {
+        "pagePath": "pages/remind/remind",
+        "text": "用药提醒",
+        "iconPath": "/icons/tip.png",
+        "selectedIconPath": "/icons/tip_clk.png"
+      },
+      {
+        "pagePath":"pages/record/record",
+        "text":"服药记录",
+        "iconPath":"/icons/record.png",
+        "selectedIconPath":"/icons/record_clk.png"
+      }
+    ],
+    "backgroundColor":"#FFFFFF",
+    "color":"#8a8a8a",
+    "selectedColor":"#3CB371"
+  },
+  "sitemapLocation": "sitemap.json"
+}

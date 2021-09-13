@@ -1,0 +1,23 @@
+<!-- pages/setMedicine1/setMedicine1.wxml -->
+<view class="up">
+    <view class="process">
+        <view class="processItem" wx:for="{{processStyle}}" wx:key="{{index}}">
+            <view class="processLeft" style="background-color:{{processStyle[index].left}}"></view>
+            <image class="processImg" src="{{processStyle[index].icon}}" mode="aspectFit"></image>
+            <view class="processRight" style="background-color:{{processStyle[index].right}}"></view>
+        </view>
+    </view>
+    <view class="medicineTip">
+        <view class="medicine">药品名称</view>
+        <view class="tip">选择您要添加的药品名称</view>
+    </view>
+</view>
+<view class="down">
+    <view class="curMedicine">{{curMedicine}}</view>
+    <view class="allMedicine">
+        <view class="medicineItem" bind:tap="medicineTap" style="background-color:{{curMedicineIndex==index?'#00CC99':'white'}};color:{{curMedicineIndex==index?'white':'#666'}};" wx:for="{{allMedicine}}" data-index='{{index}}' wx:key="{{index}}">
+            {{allMedicine[index]}}
+        </view>
+    </view>
+</view>
+<view class="nextPage" bind:tap="nextPage">下一步</view>

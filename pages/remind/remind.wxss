@@ -1,0 +1,324 @@
+/* pages/remind/remind.wxss */
+/* 消息提示框 */
+.modelBack {
+    position: fixed;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+
+.myModel {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1002;
+}
+
+.latticeNumBox,
+.latticeContentBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.latticeNum {
+    position: relative;
+    z-index: 1005;
+    bottom: -100rpx;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 50%;
+    background-color: white;
+    color: white;
+    width: 220rpx;
+    height: 220rpx;
+    border: 13rpx solid white;
+    box-sizing: border-box;
+}
+
+.latticeIndex {
+    text-align: center;
+    font-size: 250%;
+    font-weight: 400;
+    font-stretch: ultra-condensed;
+}
+
+.latticeText {
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.latticeContent {
+    border-radius: 30rpx;
+    margin: auto;
+    width: 80%;
+    height: auto;
+    background-color: white;
+}
+
+.contentSpace {
+    width: 100%;
+    height: 150rpx;
+}
+
+.medicineName {
+    color: #666;
+    font-size: 55rpx;
+    font-weight: 600;
+    text-align: center;
+}
+
+.editContent {
+    margin: auto;
+    margin-top: 60rpx;
+    box-sizing: border-box;
+    padding: 20rpx 0;
+    text-align: center;
+    width: 80%;
+    background-color: #00CC99;
+    color: white;
+    font-size: 40rpx;
+    border-radius: 40rpx;
+    font-weight: 300;
+}
+
+.clearLattice {
+    margin-top: 70rpx;
+    border-top: 3rpx solid #DCDCDC;
+    color: #666;
+    text-align: center;
+    padding: 30rpx 0;
+}
+
+/* 蓝牙状态 */
+.tip {
+    width: 100%;
+    position: absolute;
+    z-index: 1001;
+}
+
+.tipBack {
+    border-radius: 40rpx;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: auto;
+    width: 90%;
+    height: 80rpx;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tipText {
+    font-size: 90%;
+}
+
+/* 上半部分 */
+.up {
+    background-color: #00CC99;
+}
+
+.upSpace {
+    width: 100%;
+    height: 100rpx;
+}
+
+/* 用户头像栏 */
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15rpx;
+}
+
+.userLeft {
+    display: flex;
+    align-items: center;
+}
+
+.userImg {
+    height: 100rpx;
+    width: 100rpx;
+    margin-left: 20rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.boxText {
+    color: white;
+    margin-left: 35rpx;
+}
+
+.config {
+    margin-right: 20rpx;
+    height: 50rpx;
+    width: 50rpx;
+}
+
+.configImg {
+    width: 100%;
+    height: 100%;
+}
+
+.space {
+    height: 150rpx;
+    width: 100%;
+}
+
+/* 下半部分 */
+.down {
+    background-color: white;
+}
+
+/* 药盒槽 */
+.box {
+    position: relative;
+    top: -40px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+
+.lattice {
+    border-radius: 25rpx;
+    background-color: white;
+    box-shadow: 0 0 5px #888888;
+    width: 23%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    height: 300rpx;
+}
+
+.line1 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100rpx;
+}
+
+.lind1Index {
+    font-weight: bold;
+    font-size: 150%;
+    vertical-align: text-top;
+}
+
+.lind1IndexAf {
+    font-size: 20rpx;
+    position: relative;
+    top: -5rpx;
+}
+
+.line2 {
+    height: 100rpx;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    scroll-margin-bottom: 15rpx;
+}
+
+.line3 {
+    width: 100%;
+    height: 100rpx;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.addMedicine {
+    height: 60rpx;
+    width: 60rpx;
+    margin: 0 auto;
+}
+
+.medicine {
+    height: 60rpx;
+    width: 60rpx;
+    margin: 0 auto;
+}
+
+.editMedicine {
+    height: 60rpx;
+    width: 60rpx;
+    margin: 0 auto;
+}
+
+/* 服药提醒列表 */
+.emptyTip {
+    margin: auto;
+    text-align: center;
+    font-size: 35rpx;
+}
+
+.remindSpace {
+    width: 100%;
+    height: 60rpx;
+}
+
+.nextRemind,
+.nowRemind {
+    display: flex;
+    justify-content: space-between;
+    font-size: 160%;
+    color: #666;
+    margin-bottom: 30rpx;
+}
+
+.nextRemindLeft,
+.nowRemindLeft {
+    margin-left: 25rpx;
+}
+
+.nextRemindRight,
+.nowRemindRight {
+    margin-right: 25rpx;
+}
+
+.remindListDetail {
+    height: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #AFEEEE;
+    margin-bottom: 15rpx;
+    border-radius: 25rpx;
+    box-sizing: border-box;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    color: #666;
+}
+
+.detailLeft {
+    margin-left: 25rpx;
+    display: flex;
+    align-items: center;
+}
+
+.remindListLattice {
+    color: white;
+    font-size: 25rpx;
+    padding: 10rpx 15rpx;
+    border-radius: 10rpx;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.remindListMedicine {
+    margin-left: 40rpx;
+    font-size: 42rpx;
+}
+
+.detailRight {
+    margin-right: 25rpx;
+    font-size: 70%;
+}
+
+.remindListNumber_number {
+    font-size: 200%;
+}

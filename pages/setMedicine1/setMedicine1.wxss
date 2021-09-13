@@ -1,0 +1,107 @@
+/* pages/setMedicine1/setMedicine1.wxss */
+page {
+    background-color: #D3D3D3;
+}
+
+.up {
+    background-color: #00CC99;
+    padding: 60rpx 0 150rpx 0;
+}
+
+/* 进度条 */
+.process {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.processItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.processLeft,
+.processRight {
+    background-color: white;
+    height: 3rpx;
+    width: 120rpx;
+}
+
+.processImg {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    height: 80rpx;
+    width: 80rpx;
+}
+
+/* 操作说明 */
+.medicineTip {
+    margin-top: 70rpx;
+    color: white;
+    text-align: center;
+}
+
+.medicine,
+.tip,
+.nextPage {
+    letter-spacing: 5rpx;
+}
+
+.medicine {
+    font-size: 55rpx;
+}
+
+.tip {
+    font-size: 35rpx;
+    margin-top: 16rpx;
+}
+
+/* 当前选中药品 */
+.curMedicine {
+    position: relative;
+    top: -78rpx;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 30rpx;
+    width: 90%;
+    height: 172rpx;
+    padding: 50rpx 0;
+    text-align: center;
+    color: #00CC99;
+    font-size: 55rpx;
+}
+
+/* 药品列表 */
+.allMedicine {
+    position: relative;
+    top: -20rpx;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    letter-spacing: 2rpx;
+}
+
+.medicineItem {
+    box-sizing: border-box;
+    padding: 10rpx 20rpx;
+    border-radius: 20rpx;
+    margin-right: 15rpx;
+    margin-top: 15rpx;
+}
+
+/* 底部跳转按钮 */
+.nextPage {
+    box-sizing: border-box;
+    position: fixed;
+    padding: 35rpx;
+    width: 100%;
+    bottom: 0;
+    font-size: 35rpx;
+    text-align: center;
+    color: white;
+    background-color: #00CC99;
+}

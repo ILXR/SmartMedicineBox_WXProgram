@@ -1,0 +1,66 @@
+<!-- pages/setMedicine2/setMedicine2.wxml -->
+<wxs module="util" src="./setMedicine2.wxs" />
+<view class="up">
+    <view class="process">
+        <view class="processItem" wx:for="{{processStyle}}" wx:key="{{index}}">
+            <view class="processLeft" style="background-color:{{processStyle[index].left}}"></view>
+            <image class="processImg" src="{{processStyle[index].icon}}" mode="aspectFit"></image>
+            <view class="processRight" style="background-color:{{processStyle[index].right}}"></view>
+        </view>
+    </view>
+    <view class="timeTip">
+        <view class="time">次数和用量</view>
+        <view class="tip">
+            <icon class="" type="warn" size="16" color="yellow"></icon>
+            请遵照医嘱进行设置
+        </view>
+    </view>
+</view>
+<view class="down">
+    <view class="week">
+        <view class="weekLine">
+            <view class="weekText">选择哪天吃</view>
+            <view class="weekTip">勾选服用日期</view>
+        </view>
+        <checkbox-group class="weekConfig" bindchange="weekChange">
+            <view class="checkbox" wx:for="{{weekCheck}}" wx:key="{{index}}">
+                <checkbox class="checkItem" value="{{index}}" checked="{{util.weekChecked(latticeContent.weekTakeDay,index)}}" />
+                <view class="checkItemText">{{item.text}}</view>
+            </view>
+        </checkbox-group>
+    </view>
+    <view class="number">
+        <view class="numberLine">
+            <view class="numberText">选择用量</view>
+            <view class="numberTip">吃几次·几点吃·吃多少</view>
+        </view>
+        <view class="setNumber">
+            <view class="setTimes">
+                <picker class="timesPicker" mode="selector" range="{{timePerDayArray}}" value="{{timePerDayIndex}}" bindchange="timesPickerChange">
+                    <view class="times">{{timePerDayArray[timePerDayIndex]}}</view>
+                </picker>
+                <view class="timesText">每天/次</view>
+            </view>
+            <view class="setNumpertime">
+                <picker class="numberPicker" mode="selector" range="{{numPerTimeArray}}" value="{{numPerTimeIndex}}" bindchange="numberPickerChange">
+                    <view class="numberpertime">{{numPerTimeArray[numPerTimeIndex]}}</view>
+                </picker>
+                <view class="numberText">每次/粒</view>
+            </view>
+        </view>
+        <view class="setContent">
+            <view class="contentDetail" wx:for="{{latticeContent.contentDetail}}" wx:key="{{index}}">
+                <picker data-index="{{index}}" class="contentTimePicker" mode="multiSelector" range="{{time}}" value="{{timeIndex[index]}}" bindchange="contentTimePickerChange">
+                    <view class="remindTime">{{util.fmtTime(item.remindTime)}}</view>
+                </picker>
+                <picker data-index="{{index}}" class="contentNumPicker" mode="selector" range="{{numPerTimeArray}}" value="{{numberIndex[index]}}" bindchange="contentNumPickerChange">
+                    <view class="takeNumber">
+                        {{item.takeNumber}}
+                        <text class="takeText">粒</text>
+                    </view>
+                </picker>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="finish" bind:tap="finishConfig">完成</view>

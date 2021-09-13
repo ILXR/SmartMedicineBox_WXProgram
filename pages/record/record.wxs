@@ -1,0 +1,49 @@
+// 从数据库获得的时间格式解析为 xxxx年xx月xx日 或者 xx:xx
+var getTime = function (Time, Mode) {
+    var array = Time.split(" ");
+    var result;
+    if (Mode === 0) {
+        var date = array[0].split("-");
+        result = date[0] + "年" + removeZero(date[1]) + "月" + removeZero(date[2]) + "日";
+    } else if (Mode === 1) {
+        var time = array[1].split(":");
+        result = time[0] + ":" + time[1];
+    } else {
+        result = Time;
+    }
+    return result;
+}
+function removeZero(data) {
+    if (data.charAt(0) == "0")
+        return data.charAt(1);
+    else
+        return data;
+}
+
+// 对于同样服药时间的记录，只显示一次服药时间
+var recordHide = function (recordList, index) {
+    if (index == 0)
+        return false;
+    var a = recordList[index - 1];
+    var b = recordList[index];
+    var aday = a.remindTime.split(" ")[0].split("-");
+    var bday = b.remindTime.split(" ")[0].split("-");
+    var atime = a.remindTime.split(" ")[1].split(":");
+    var btime = b.remindTime.split(" ")[1].split(":");
+    for (var i = 0; i < 3; i++) {
+        if (parseInt(aday[i]) != parseInt(bday[i])) {
+            return false
+        }
+    }
+    for (var i = 0; i < 2; i++) {
+        if (parseInt(atime[i]) != parseInt(btime[i])) {
+            return false
+        }
+    }
+    return true;
+}
+
+module.exports = {
+    getTime: getTime,
+    recordHide:recordHide
+}

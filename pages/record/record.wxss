@@ -1,0 +1,154 @@
+/* pages/record/record.wxss */
+page {
+    background: #00CC99;
+}
+
+/* 用户头像以及分享栏 */
+.user {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50rpx;
+}
+
+.userLeft {
+    display: flex;
+    align-items: center;
+    margin-left: 25rpx;
+}
+
+.userImg {
+    width: 95rpx;
+    height: 95rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 30rpx;
+}
+
+.userName {
+    color: white;
+    font-size: 80%;
+}
+
+.share {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin-right: 40rpx;
+    color: white;
+    border-radius: 50rpx;
+    border: white solid 2rpx;
+    padding: 15rpx 25rpx;
+}
+
+.QRcode {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 15rpx;
+}
+
+.shareText {
+    font-size: 25rpx;
+}
+
+/* 服药列表 */
+/* 状态显示 */
+.recordList {
+    width: 100%;
+}
+
+.listDetail {
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+}
+
+.detailTile {
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.takeTime {
+    color: white;
+    position: relative;
+    top: -13rpx;
+}
+
+.day {
+    font-size: 30rpx;
+}
+
+.time {
+    font-size: 50rpx;
+}
+
+.takeState {
+    display: flex;
+    align-items: center;
+}
+
+.stateShow {
+    padding: 15rpx 20rpx;
+    display: flex;
+    background-color: white;
+    border-radius: 30rpx;
+    align-items: center;
+    font-size: 26rpx;
+    margin-right: 10rpx;
+}
+
+.stateIcon {
+    margin-right: 10rpx;
+}
+
+.stateEdit {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.editImg {
+    width: 100%;
+    height: 100%;
+}
+
+/* 服药内容显示 */
+.detailContent {
+    box-sizing: border-box;
+    padding: 0 23rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30rpx;
+    background-color: white;
+    height: 150rpx;
+    margin-bottom: 40rpx;
+}
+
+.detailLeft {
+    display: flex;
+    align-items: center;
+}
+
+.detailLattice {
+    color: white;
+    font-size: 26rpx;
+    border-radius: 15rpx;
+    padding: 10rpx 20rpx;
+}
+
+.detailMedicine {
+    color: #666;
+    margin-left: 25rpx;
+    font-weight: 600;
+}
+
+.detailRight {
+    color: #666;
+    font-size: 30rpx;
+}
+
+.medicineNum {
+    font-size: 60rpx;
+}

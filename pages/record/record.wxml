@@ -1,0 +1,58 @@
+<!-- pages/record/record.wxml -->
+<wxs module="util" src="./record.wxs" />
+<view class="content">
+    <!-- 用户信息以及分享烂 -->
+    <view class="user">
+        <view class="userLeft">
+            <view class="userImg">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view class="userName">
+                <open-data type="userNickName"></open-data>
+            </view>
+        </view>
+        <view class="share">
+            <image class="QRcode" src="/icons/Refresh.png" mode="aspectFit" />
+            <view class="shareText">下拉刷新</view>
+        </view>
+    </view>
+    <!-- 服药周报 -->
+    <view class="weekRecord"></view>
+    <!-- 服药记录列表 -->
+    <view class="recordList">
+        <view class="listDetail" wx:for="{{recordList}}" wx:key="{{index}}">
+            <!-- 日期及服用状态 -->
+            <view class="detailTile" hidden="{{util.recordHide(recordList,index)}}">
+                <view class="takeTime">
+                    <view class="day">{{util.getTime(item.remindTime,0)}}</view>
+                    <view class="time">{{util.getTime(item.remindTime,1)}}</view>
+                </view>
+                <view class="takeState" bind:tap="changeState" data-index="{{index}}">
+                    <!-- 显示服用状态 -->
+                    <view class="stateShow">
+                        <icon class="stateIcon" type="{{item.state==1?'success':'info'}}" color="{{item.state==1?takeColor:ntakeColor}}" size="15" />
+                        <view class="stateText" style="color:{{item.state==1?takeColor:ntakeColor}}">
+                            {{item.state==1?'已服用':'未服用'}}
+                        </view>
+                    </view>
+                    <!-- 服用状态编辑 -->
+                    <view class="stateEdit">
+                        <image class="editImg" src="/icons/EditWhite.png" mode="aspectFit" />
+                    </view>
+                </view>
+            </view>
+            <view class="detailContent">
+                <view class="detailLeft">
+                    <view class="detailLattice" style="background-color:{{latticeStyle[item.latticeIndex-1].color}}">
+                        {{item.latticeIndex}}号仓
+                    </view>
+                    <view class="detailMedicine">{{item.medicineName}}</view>
+                </view>
+                <view class="detailRight">
+                    <text class="medicineNum">{{item.medicineNum}}</text>
+                    粒
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

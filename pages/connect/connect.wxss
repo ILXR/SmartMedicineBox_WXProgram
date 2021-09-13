@@ -1,0 +1,132 @@
+/* pages/connect/connect.wxss */
+page {
+    background-color: #D3D3D3;
+}
+
+/* 搜索图标 */
+.up {
+    width: 100%;
+    background-image: linear-gradient(#222222, #444444);
+    border-bottom: 7rpx solid #00CC99;
+    justify-content: center;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 300rpx;
+
+}
+
+.searchIcon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: 0rpx;
+    width: 200rpx;
+    height: 200rpx;
+    margin: auto;
+    margin-top: 100rpx;
+    box-shadow: #00CC99 0 0 30rpx;
+}
+
+.searchImg {
+    z-index: 5;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+@keyframes searching {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.3;
+        /*圆形放大的同时，透明度逐渐减小为0*/
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0.0;
+    }
+}
+
+.first,
+.second {
+    position: absolute;
+    width: 200rpx;
+    height: 200rpx;
+    left: 0;
+    bottom: 0;
+    background-color: #00CC99;
+    border-radius: 50%;
+    animation: searching 2.5s linear infinite;
+    z-index: 1;
+}
+
+.second {
+    animation: searching 2.5s 1.25s linear infinite;
+    z-index: 2;
+}
+
+.version {
+    color: #A9A9A9;
+    width: 100%;
+    text-align: center;
+    margin-top: 100rpx;
+}
+
+.upSpace {
+    width: 100%;
+    height: 100rpx;
+}
+
+/* 寻找药盒按钮 */
+.searchBut {
+    position: relative;
+    top: -70rpx;
+    margin: auto;
+    background-color: #00CC99;
+    padding: 40rpx 80rpx;
+    color: white;
+    border-radius: 50rpx;
+    text-align: center;
+    width: 30%;
+    box-shadow: #33CC99 0 0 20rpx;
+}
+
+/* 设备列表 */
+.device {
+    margin: auto;
+    width: 90%;
+    background-color: whitesmoke;
+    padding: 15rpx;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 40rpx;
+    box-shadow: #666 0 0 20rpx;
+    margin-top: 20rpx;
+    border-radius: 15rpx;
+}
+
+/* 底部删除设备按钮 */
+.delete {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 20rpx;
+    padding: 30rpx 0;
+    width: 94%;
+    border-radius: 30rpx;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+    color: #DC143C;
+    background-color: white;
+}

@@ -1,0 +1,24 @@
+// 判断星期几是否被选中了 week 0-127  index 0-6
+var weekChecked = function (week, index) {
+    var checked = (week >> (6 - index)) & 1;
+    return checked != 0 ? true : false;
+}
+// 获取小时
+var getHourIndex = function (time) {
+    return parseInt(time.split(":")[0]);
+}
+// 获取分钟
+var getMinIndex = function (time) {
+    return parseInt(time.split(":")[1]);
+}
+// 时间格式化
+var fmtTime = function (time) {
+    var temp = time.split(":");
+    return temp[0] + ":" + temp[1];
+}
+module.exports = {
+    weekChecked: weekChecked,
+    getHourIndex: getHourIndex,
+    getMinIndex: getMinIndex,
+    fmtTime: fmtTime
+}

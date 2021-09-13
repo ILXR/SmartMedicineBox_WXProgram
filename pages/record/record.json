@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#00CC99",
+  "navigationBarTitleText": "服药记录",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#00CC99"
+}

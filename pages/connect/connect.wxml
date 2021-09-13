@@ -1,0 +1,22 @@
+<!-- pages/connect/connect.wxml -->
+<view class="up">
+    <!-- 搜索图标 -->
+    <view class="searchBox">
+        <view class="searchIcon" style="background-color:#00CC99;">
+            <image class="searchImg" src="/icons/Search.png" mode="aspectFit" />
+            <view hidden="{{!searching}}" class="first"></view>
+            <view hidden="{{!searching}}" class="second"></view>
+        </view>
+    </view>
+    <view class="version">Version {{version}}</view>
+    <view class="upSpace"></view>
+</view>
+<!-- 搜索按钮 -->
+<view class="searchBut" bind:tap="searchDevice">寻找药盒</view>
+<!-- 搜索到的设备列表 -->
+<view class="deviceList">
+    <view class="device" wx:for="{{deviceList}}" wx:key="{{index}}" bind:tap="tapDevice" data-item="{{item}}">
+        SmartBox: {{item.deviceId}}
+    </view>
+</view>
+<view class="delete" bind:tap="deleteDevice">删除药盒</view>
